@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>somos.NMD</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: white;
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: black;
+        }
+
+        .title {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 80px;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+
+        .point {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 11px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            line-height: 1.2;
+            background-size: cover;
+            background-position: center;
+            border: 3px solid black;
+        }
+
+        .point:hover {
+            box-shadow: 0 0 20px rgba(0, 200, 255, 0.6), 0 0 40px rgba(0, 200, 255, 0.3);
+            border: 3px solid #00c8ff;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+        }
+
+        .point:hover .point-name {
+            background: rgba(0, 200, 255, 0.9);
+            color: black;
+        }
+
+        .center-point {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 10;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+        }
+
+        .center-point:hover {
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.3);
+            border: 3px solid #ffffff;
+        }
+
+        .center-point:hover .point-name {
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+        }
+
+        .point-name {
+            background: rgba(0,0,0,0.8);
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        /* Posicionamiento en círculo perfecto - 12 puntos equidistantes */
+        .point-1 { top: 0%; left: 50%; transform: translate(-50%, -50%); }
+        .point-2 { top: 6.7%; right: 25%; transform: translate(50%, -50%); }
+        .point-3 { top: 25%; right: 6.7%; transform: translate(50%, -50%); }
+        .point-4 { top: 50%; right: 0%; transform: translate(50%, -50%); }
+        .point-5 { bottom: 25%; right: 6.7%; transform: translate(50%, 50%); }
+        .point-6 { bottom: 6.7%; right: 25%; transform: translate(50%, 50%); }
+        .point-7 { bottom: 0%; left: 50%; transform: translate(-50%, 50%); }
+        .point-8 { bottom: 6.7%; left: 25%; transform: translate(-50%, 50%); }
+        .point-9 { bottom: 25%; left: 6.7%; transform: translate(-50%, 50%); }
+        .point-10 { top: 50%; left: 0%; transform: translate(-50%, -50%); }
+        .point-11 { top: 25%; left: 6.7%; transform: translate(-50%, -50%); }
+        .point-12 { top: 6.7%; left: 25%; transform: translate(-50%, -50%); }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 32px;
+                margin-bottom: 60px;
+            }
+            
+            .container {
+                width: 350px;
+                height: 350px;
+            }
+            
+            .point {
+                width: 60px;
+                height: 60px;
+                font-size: 9px;
+            }
+
+            .center-point {
+                width: 90px;
+                height: 90px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title">somos.NMD</div>
+    
+    <div class="container">
+        <!-- NOMADES en el centro -->
+        <div class="point center-point" data-url="URL_NOMADES_AQUI">
+            <div class="point-name">NOMADES</div>
+        </div>
+
+        <!-- Los 12 integrantes en círculo -->
+        <div class="point point-1" data-url="URL_NEI_AQUI">
+            <div class="point-name">Nei</div>
+        </div>
+        <div class="point point-2" data-url="URL_KENMA_AQUI">
+            <div class="point-name">Kenma</div>
+        </div>
+        <div class="point point-3" data-url="URL_GERVI_AQUI">
+            <div class="point-name">Gervi</div>
+        </div>
+        <div class="point point-4" data-url="URL_LUCCIO_AQUI">
+            <div class="point-name">Luccio</div>
+        </div>
+        <div class="point point-5" data-url="URL_CABA_AQUI">
+            <div class="point-name">Caba</div>
+        </div>
+        <div class="point point-6" data-url="URL_LETIE_AQUI">
+            <div class="point-name">Letie</div>
+        </div>
+        <div class="point point-7" data-url="URL_LUQUILLA_AQUI">
+            <div class="point-name">Luquilla</div>
+        </div>
+        <div class="point point-8" data-url="URL_JUSTINO_AQUI">
+            <div class="point-name">Justino</div>
+        </div>
+        <div class="point point-9" data-url="URL_QUEI_AQUI">
+            <div class="point-name">Quei</div>
+        </div>
+        <div class="point point-10" data-url="URL_IZQUIERDO_AQUI">
+            <div class="point-name">Izquierdo</div>
+        </div>
+        <div class="point point-11" data-url="URL_JUANMA_AQUI">
+            <div class="point-name">Juanma</div>
+        </div>
+        <div class="point point-12" data-url="URL_NACHT_AQUI">
+            <div class="point-name">Nacht</div>
+        </div>
+    </div>
+
+    <script>
+        // URLs de las páginas de Notion
+        const urls = {
+            'Nei': 'https://www.notion.so/Nei-2111aa6f28c6803499e9c5cdf7b6280f',
+            'Kenma': 'https://www.notion.so/Kenma-2111aa6f28c680c8be6dc03a8abfe3c8',
+            'Gervi': 'https://www.notion.so/Gervi-2111aa6f28c680328f5dc9c558d05bae',
+            'Luccio': 'https://www.notion.so/Luccio-2111aa6f28c6800c98c1c35bf1c4a963',
+            'Caba': 'https://www.notion.so/Caba-2111aa6f28c68042b1dffc45a71d4cfd',
+            'Letie': 'https://www.notion.so/Letie-2111aa6f28c680e79064d2595a02a16a',
+            'Luquilla': 'https://www.notion.so/Luquilla-2111aa6f28c680179677e22fbbef4278',
+            'Justino': 'https://www.notion.so/Justino-2111aa6f28c6802a9aa1dfb093a478a6',
+            'Quei': 'https://www.notion.so/Quei-2111aa6f28c6802e995bfa9bd4a90e37',
+            'Izquierdo': 'https://www.notion.so/Izquierdo-2111aa6f28c680ed91ffe68cf3f43e7b',
+            'Juanma': 'https://www.notion.so/Juanma-2111aa6f28c6808caca0c7a0ecc70ff3',
+            'Nacht': 'https://www.notion.so/Nacht-2111aa6f28c680308fd7ffd4d870f22a',
+            'NOMADES': 'https://www.notion.so/NOMADES-2111aa6f28c6819284b3feb6ca007a6a'
+        };
+
+        document.querySelectorAll('.point').forEach(point => {
+            point.addEventListener('click', function() {
+                const name = this.querySelector('.point-name').textContent;
+                const url = urls[name];
+                if (url) {
+                    window.open(url, '_blank');
+                }
+            });
+        });
+
+        // Función para agregar fotos de fondo
+        function setProfilePhoto(pointClass, imageUrl) {
+            const point = document.querySelector(pointClass);
+            if (point && imageUrl) {
+                point.style.backgroundImage = `url(${imageUrl})`;
+            }
+        }
+
+        // Agregar fotos de perfil
+        setProfilePhoto('.point-1', 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2F69be1c61-57a0-49b8-8d2e-0da054b72a4b%2Fnmdfinal-10.jpg?table=custom_emoji&id=2111aa6f-28c6-80bf-a742-007a78b7fc6e&spaceId=221af9af-8893-4463-8b54-ca7ab2b27557&width=160&userId=16ed872b-594c-8114-a61c-0002cfe38aa2&cache=v2'); // Nei
+        setProfilePhoto('.point-2', 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2F93e4b8bf-5ba6-40f0-89f9-751b7421cdef%2Fnmdfinal-23.jpg?table=custom_emoji&id=2111aa6f-28c6-803a-9aca-007a425580c3&spaceId=221af9af-8893-4463-8b54-ca7ab2b27557&width=160&userId=16ed872b-594c-8114-a61c-0002cfe38aa2&cache=v2'); // Kenma
+        setProfilePhoto('.point-3', 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2F6cb9a237-d39d-4d26-87ca-2e6b9a3c6224%2Fnmdfinal-02.jpg?table=custom_emoji&id=2111aa6f-28c6-80b8-972d-007a210f14f7&spaceId=221af9af-8893-4463-8b54-ca7ab2b27557&width=160&userId=16ed872b-594c-8114-a61c-0002cfe38aa2&cache=v2'); // Gervi
+        setProfilePhoto('.point-4', 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2F8a017ef3-9def-4aa5-863d-fa7500e31d3f%2Fnmdfinal-04.jpg?table=custom_emoji&id=2111aa6f-28c6-8024-9c4b-007a3e87537e&spaceId=221af9af-8893-4463-8b54-ca7ab2b27557&width=160&userId=16ed872b-594c-8114-a61c-0002cfe38aa2&cache=v2'); // Luccio
+        setProfilePhoto('.point-5', 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2Fd0f72fff-93dd-4c51-a322-862ce61a2a96%2Fnmdfinal-06.jpg?table=custom_emoji&id=2111aa6f-28c6-80b2-ab64-007afaf89207&spaceId=221af9af-8893-4463-8b54-ca7ab2b27557&width=160&userId=16ed872b-594c-8114-a61c-0002cfe38aa2&cache=v2'); // Caba
+        setProfilePhoto('.point-6', 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2F46f5cd98-2a5a-4cd8-853b-c2f9782d3b47%2Fnmdfinal-01.jpg?table=custom_emoji&id=2111aa6f-28c6-805d-8c8a-007a3caf6998&spaceId=221af9af-8893-4463-8b54-ca7ab2b27557&width=160&userId=16ed872b-594c-8114-a61c-0002cfe38aa2&cache=v2'); // Letie
+        setProfilePhoto('.point-7', 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2F8e7246be-e50d-468c-b79c-15d491da17ba%2Fnmdfinal-13.jpg?table=custom_emoji&id=2111aa6f-28c6-8095-861a-007a1a7a1b1d&spaceId=221af9af-8893-4463-8b54-ca7ab2b27557&width=160&userId=16ed872b-594c-8114-a61c-0002cfe38aa2&cache=v2'); // Luquilla
+        setProfilePhoto('.point-8', 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2F3db84f1d-8afe-42dc-9e78-2df8b5e774a3%2Fnmdfinal-20.jpg?table=custom_emoji&id=2111aa6f-28c6-80d6-94f4-007a2f12780b&spaceId=221af9af-8893-4463-8b54-ca7ab2b27557&width=160&userId=16ed872b-594c-8114-a61c-0002cfe38aa2&cache=v2'); // Justino
+        setProfilePhoto('.point-9', 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2F00c15320-6569-4a7a-a0a1-e36ba9b95769%2Fnmdfinal-16.jpg?table=custom_emoji&id=2111aa6f-28c6-80ed-a259-007a720bae89&spaceId=221af9af-8893-4463-8b54-ca7ab2b27557&width=160&userId=16ed872b-594c-8114-a61c-0002cfe38aa2&cache=v2'); // Quei
+        setProfilePhoto('.point-10', 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2F84084ec6-5063-4a27-b6a7-e82a0fa58179%2Fnmdfinal-21.jpg?table=custom_emoji&id=2111aa6f-28c6-8060-94e4-007ac0c0bb7e&spaceId=221af9af-8893-4463-8b54-ca7ab2b27557&width=160&userId=16ed872b-594c-8114-a61c-0002cfe38aa2&cache=v2'); // Izquierdo
+        setProfilePhoto('.point-11', 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2Fe1445854-e3af-432c-8dc2-7da0b23a612d%2FDiseo_sin_ttulo.jpg?table=custom_emoji&id=2111aa6f-28c6-80b2-9556-007a8f6de613&spaceId=221af9af-8893-4463-8b54-ca7ab2b27557&width=160&userId=16ed872b-594c-8114-a61c-0002cfe38aa2&cache=v2'); // Juanma
+        setProfilePhoto('.point-12', 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2F4534cce1-d5be-41c1-add3-b642a3206b3b%2Fnmdfinal-12.jpg?table=custom_emoji&id=2111aa6f-28c6-809b-8bc3-007ae35fe3b0&spaceId=221af9af-8893-4463-8b54-ca7ab2b27557&width=160&userId=16ed872b-594c-8114-a61c-0002cfe38aa2&cache=v2'); // Nacht
+        
+        // Foto para NOMADES (centro)
+        setProfilePhoto('.center-point', 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fpublic.notion-static.com%2F9b571482-c3cf-468f-a372-f9087f53facc%2FWhatsApp_Image_2025-06-12_at_21.57.10.jpeg?table=custom_emoji&id=2111aa6f-28c6-80ca-bc6c-007ad2ded5db&spaceId=221af9af-8893-4463-8b54-ca7ab2b27557&width=160&userId=16ed872b-594c-8114-a61c-0002cfe38aa2&cache=v2');
+    </script>
+</body>
+</html>
