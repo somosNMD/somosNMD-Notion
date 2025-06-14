@@ -59,14 +59,8 @@
         }
 
         .point:hover {
-            box-shadow: 0 0 20px rgba(0, 200, 255, 0.6), 0 0 40px rgba(0, 200, 255, 0.3);
-            border: 3px solid #00c8ff;
-            background: linear-gradient(135deg, #1a1a1a, #333);
-        }
-
-        .point:hover .point-name {
-            background: rgba(0, 200, 255, 0.9);
-            color: black;
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         .center-point {
@@ -79,16 +73,13 @@
             font-weight: 600;
             z-index: 10;
             background: linear-gradient(135deg, #1a1a1a, #333);
+            background-size: cover;
+            background-position: center;
         }
 
         .center-point:hover {
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.3);
-            border: 3px solid #ffffff;
-        }
-
-        .center-point:hover .point-name {
-            background: rgba(255, 255, 255, 0.9);
-            color: black;
+            transform: translate(-50%, -50%) scale(1.15);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
 
         .point-name {
@@ -100,18 +91,113 @@
         }
 
         /* Posicionamiento en círculo perfecto - 12 puntos equidistantes */
-        .point-1 { top: 0%; left: 50%; transform: translate(-50%, -50%); }
-        .point-2 { top: 6.7%; right: 25%; transform: translate(50%, -50%); }
-        .point-3 { top: 25%; right: 6.7%; transform: translate(50%, -50%); }
-        .point-4 { top: 50%; right: 0%; transform: translate(50%, -50%); }
-        .point-5 { bottom: 25%; right: 6.7%; transform: translate(50%, 50%); }
-        .point-6 { bottom: 6.7%; right: 25%; transform: translate(50%, 50%); }
-        .point-7 { bottom: 0%; left: 50%; transform: translate(-50%, 50%); }
-        .point-8 { bottom: 6.7%; left: 25%; transform: translate(-50%, 50%); }
-        .point-9 { bottom: 25%; left: 6.7%; transform: translate(-50%, 50%); }
-        .point-10 { top: 50%; left: 0%; transform: translate(-50%, -50%); }
-        .point-11 { top: 25%; left: 6.7%; transform: translate(-50%, -50%); }
-        .point-12 { top: 6.7%; left: 25%; transform: translate(-50%, -50%); }
+        .point-1 { 
+            top: 0%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+        }
+        .point-1:hover { 
+            transform: translate(-50%, -50%) scale(1.1) translateY(-5px); 
+        }
+
+        .point-2 { 
+            top: 6.7%; 
+            right: 25%; 
+            transform: translate(50%, -50%); 
+        }
+        .point-2:hover { 
+            transform: translate(50%, -50%) scale(1.1) translateY(-5px); 
+        }
+
+        .point-3 { 
+            top: 25%; 
+            right: 6.7%; 
+            transform: translate(50%, -50%); 
+        }
+        .point-3:hover { 
+            transform: translate(50%, -50%) scale(1.1) translateY(-5px); 
+        }
+
+        .point-4 { 
+            top: 50%; 
+            right: 0%; 
+            transform: translate(50%, -50%); 
+        }
+        .point-4:hover { 
+            transform: translate(50%, -50%) scale(1.1) translateY(-5px); 
+        }
+
+        .point-5 { 
+            bottom: 25%; 
+            right: 6.7%; 
+            transform: translate(50%, 50%); 
+        }
+        .point-5:hover { 
+            transform: translate(50%, 50%) scale(1.1) translateY(-5px); 
+        }
+
+        .point-6 { 
+            bottom: 6.7%; 
+            right: 25%; 
+            transform: translate(50%, 50%); 
+        }
+        .point-6:hover { 
+            transform: translate(50%, 50%) scale(1.1) translateY(-5px); 
+        }
+
+        .point-7 { 
+            bottom: 0%; 
+            left: 50%; 
+            transform: translate(-50%, 50%); 
+        }
+        .point-7:hover { 
+            transform: translate(-50%, 50%) scale(1.1) translateY(-5px); 
+        }
+
+        .point-8 { 
+            bottom: 6.7%; 
+            left: 25%; 
+            transform: translate(-50%, 50%); 
+        }
+        .point-8:hover { 
+            transform: translate(-50%, 50%) scale(1.1) translateY(-5px); 
+        }
+
+        .point-9 { 
+            bottom: 25%; 
+            left: 6.7%; 
+            transform: translate(-50%, 50%); 
+        }
+        .point-9:hover { 
+            transform: translate(-50%, 50%) scale(1.1) translateY(-5px); 
+        }
+
+        .point-10 { 
+            top: 50%; 
+            left: 0%; 
+            transform: translate(-50%, -50%); 
+        }
+        .point-10:hover { 
+            transform: translate(-50%, -50%) scale(1.1) translateY(-5px); 
+        }
+
+        .point-11 { 
+            top: 25%; 
+            left: 6.7%; 
+            transform: translate(-50%, -50%); 
+        }
+        .point-11:hover { 
+            transform: translate(-50%, -50%) scale(1.1) translateY(-5px); 
+        }
+
+        .point-12 { 
+            top: 6.7%; 
+            left: 25%; 
+            transform: translate(-50%, -50%); 
+        }
+        .point-12:hover { 
+            transform: translate(-50%, -50%) scale(1.1) translateY(-5px); 
+        }
 
         @media (max-width: 768px) {
             .title {
@@ -214,11 +300,14 @@
             });
         });
 
-        // Función para agregar fotos de fondo
+        // Función para agregar fotos de fondo (mejorada)
         function setProfilePhoto(pointClass, imageUrl) {
             const point = document.querySelector(pointClass);
             if (point && imageUrl) {
-                point.style.backgroundImage = `url(${imageUrl})`;
+                point.style.backgroundImage = `url('${imageUrl}')`;
+                point.style.backgroundSize = 'cover';
+                point.style.backgroundPosition = 'center';
+                point.style.backgroundRepeat = 'no-repeat';
             }
         }
 
